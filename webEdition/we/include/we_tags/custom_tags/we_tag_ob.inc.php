@@ -38,13 +38,6 @@ function we_tag_ob($attribs, $content) {
 		return $missingAttrib;
 	}
 
-	// < ?
-	// ob_start();
-    // ? ><we:var type="request" name="we_ID"/>< ?
-	// $content = ob_get_clean();
-    // ? >
-	// <we:listview type="document" rows="1" id="\$id">...
-
 
 	$varname = $attribs['varname'];
 
@@ -52,10 +45,10 @@ function we_tag_ob($attribs, $content) {
 	$to = 'global';
 
 
-    $return  = '<'.'? ob_start(); ?'.'>';
-    $return .= $content;
-    $return .= '<'.'? $returnvalue = ob_get_clean();';
-    $return .= 'we_redirect_tagoutput("$returnvalue", "'.$nameTo.'", "'.$to.'") ?'.'>';
+    	$return  = '<'.'? ob_start(); ?'.'>';
+    	$return .= $content;
+    	$return .= '<'.'? $returnvalue = ob_get_clean();';
+	$return .= 'we_redirect_tagoutput("$returnvalue", "'.$nameTo.'", "'.$to.'") ?'.'>';
 
 
 	return $return;
